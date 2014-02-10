@@ -1,0 +1,61 @@
+.contact
+{
+	width: 100%;
+	border: 1px solid #d1d1d1;
+	margin: auto;
+	margin-bottom: 5px;
+}
+
+.head
+{
+	height: 60px;
+	width: 60px;
+	margin-right: 10px;
+}
+
+.online
+{
+	margin-left: 10px;
+	display: inline-block;
+	background-image: url("../img/online.png");
+	background-size: 20px 20px;
+	height: 20px;
+	width: 20px;
+	position: relative;
+	top: 20px;
+	right: 10px;
+	float: right;
+}
+
+.offline
+{
+	margin-left: 10px;
+	display: inline-block;
+	background-image: url("../img/offline.png");
+	background-size: 20px 20px;
+	height: 20px;
+	width: 20px;
+	position: relative;
+	top: 20px;
+	right: 10px;
+	float: right;
+}
+
+.request
+{
+	float: right;
+	position: relative;
+	top: 10px;
+	right: 10px;
+}
+
+
+.loader-box
+{
+	height: 50px;
+	width: 50px;
+	margin: auto;
+	display: block;
+	background-image: url('../img/spinner.gif');
+	background-size: 50px 50px;
+}
