@@ -13,8 +13,6 @@
 	$result->execute(array(':username'=>$user_2));
 	$count = $result->rowCount();
 	if ($count != 1) {
-		//echo "Error1";
-		//exit();
 		header("Location: /?e1");
 		exit();
 	}
@@ -27,21 +25,18 @@
 		#Check if connection already exists
 		$count = $result->rowCount();
 		if ($count > 0) {
-			//echo "Error2";
 			header("Location: /?e2");
 		} else {
 			$sql = "INSERT INTO connections VALUES ('', '$user_1', '$user_2', '1')";
 			$result = $dbh->prepare($sql);
 			$result->execute();
 
-			//echo "true";
 			header("Location: /");
 		}
 	}
 	else
 	{	
 		#You Can't Send To Yourself
-		//echo "Error3";
 		header("Location: /?e3");
 	}
 

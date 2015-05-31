@@ -70,14 +70,6 @@ $(document).ready(function() {
    $(".connect").click(function(event) {
 		var user_id = event.target.id;
 		$('form#'+user_id+'-form').submit();
-        /*$.ajax({
-			type: "POST",
-			url: "chat-connect.php",
-			data: 'id='+user_id,
-			success: function(response) {
-				$('#content').html(response);
-			}
-		});*/
     });
 	
 	$('.connect').popover({

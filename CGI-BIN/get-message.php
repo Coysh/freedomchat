@@ -12,7 +12,6 @@
 		$result->execute();
 
 		foreach ($result as $row) {
-			#echo "Message to $to_user from $from_user - ".$row['message'];
 			echo str_replace(' ','+',$row['message']);
 			$message_id = $row['message_id'];
 		}
@@ -24,7 +23,6 @@
 		$sql = "DELETE FROM messages WHERE message_id = '".$message_id."' LIMIT 1";
 		$result = $dbh->prepare($sql);
 		$result->execute();
-		//echo "Deleted!";
 	} catch(PDOException $e) {
 		echo $e->getMessage();
 	}

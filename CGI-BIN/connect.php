@@ -1,3 +1,7 @@
 <?php
-	$dbh = new PDO('mysql:host=localhost;dbname=freedomc_chat', 'freedomc_chat', 'Oa%lc2?v.QZ-G^Fl8V');
+	$dbname = '' #Database Name
+	$dbusrname = '' #Database Username
+	$dbpass = '' #Database Pass
+	
+	$dbh = new PDO("mysql:host=localhost;dbname=$dbname", "$dbusrname", "$dbpass");
 ?>

@@ -3,7 +3,7 @@ function hasWhiteSpace(s) {
 }
 
 $(function() { //shorthand document.ready function
-    $('#send').on('submit', function(e) { //use on if jQuery 1.7+
+    $('#send').on('submit', function(e) {
         e.preventDefault();  //prevent form from submitting
 		var to_user = $('#to_user').val();
 		
@@ -42,12 +42,9 @@ function getMessages(to_user,from_user,user_name) {
 			url: "CGI-BIN/get-message.php",
 			data: 'to_user='+to_user+'&from_user='+from_user,
 			success: function(response) {
-				//console.log('to_user='+to_user+'&from_user='+from_user);
 				var encrypted  = response;
 				var decrypted = CryptoJS.TripleDES.decrypt(encrypted, key);
 				var message = decrypted.toString(CryptoJS.enc.Utf8);
-				//console.log("key: "+key+" - encrypted: '"+encrypted+"' - decrypted: '"+decrypted+"'");
-				//console.log("message: "+message);
 				if (message != '') {
 					$("#chat-container ul").append('<li class="left clearfix"><span class="chat-img pull-left"><img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />		</span><div class="chat-body clearfix"><div class="chat-header"><strong class="primary-font">'+user_name+'</strong></div><p>'+message+'</p></div></li>');
 				}
